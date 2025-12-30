@@ -1,0 +1,527 @@
+/* UNIVERSAL CODE */
+body {
+    background-color: black; /* This fixes the white gaps globally */
+    color: white;            /* Sets default text color */
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll bars */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.body {
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.headers {
+    font-size: 4rem;
+    margin: 4rem 0 2rem;
+    text-align: center;
+}
+
+.subheaders {
+    color: #8e8e8e;
+    font-size: 2rem;
+    text-align: left;
+    max-width: 1400px;
+    width: 80%;
+    margin: 0.2rem auto 1rem ;
+    display: block;
+}
+
+/* JS SCRIPTING */
+/* The "Before" State: Invisible and pushed down */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Pushes the element down 50px */
+    transition: all 1s ease;     /* The "Zip" speed (1 second) */
+    filter: blur(5px);           /* Optional: Starts slightly blurry */
+}
+
+/* The "After" State: Visible and back to normal */
+.show {
+    opacity: 1;
+    transform: translateY(0);    /* Moves it back to original spot */
+    filter: blur(0);
+}
+
+
+
+#mobile-menu {
+    display: none;
+}
+
+.navbar {
+    background: black;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    top: 0;
+}
+
+.navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 2;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+}
+
+#navbar__logo {
+    background-color: black;
+    background-image: linear-gradient(to top, #ff0844 0%, orange 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.navbar__item {
+    height: 80px;
+    margin: 0 1rem;
+}
+
+.navbar__links {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.navbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* Button characteristics */
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: orange;
+    color: white;
+}
+
+/* To edit button effect when mouse hovers */
+.button:hover {
+    background: blue;
+    transition: all 0.3s ease;
+}
+
+/* To edit navigation link effects when mouse hovers */
+.navbar__links:hover {
+    color: white;
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+
+
+/* For Mobile Screens */
+}
+
+@media screen and (max-width: 960px) {
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+        z-index: 100;
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0px;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: -1;
+        background: black;
+    }
+
+    .navbar__menu.active {
+        background: black;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5 ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: white;
+        display: block;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+    }
+
+    /* The following 3 scripts target the 3 bars, animating it into an X when clicking */
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+.hero {
+    height:100vh;
+    width: 100%;
+    overflow: hidden; /* come back and check what this means */
+}
+
+
+.hero__video {
+    position: absolute;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 1;
+}
+
+.hero__content {
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 80vh;
+text-align: center;
+color: white;
+z-index: 2;
+}
+
+#hero__name {
+    font-size: 6rem;
+    font-weight: bold;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.hero__subtitle {
+    
+}
+
+/* The dynamic text color */
+#typewriter {
+    color:white; /* Matches your button/logo */
+    font-weight: bold;
+    /* The Cursor Line */
+    border-right: 3px solid white; 
+    padding-right: 5px;
+    /* The Blinking Animation */
+    animation: blink 0.7s step-end infinite;
+}
+
+/* The Animation Logic */
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+}
+
+
+/* ABOUT SECTION */
+.about {
+    height: 100vh;
+}
+
+.about__bkg {
+    max-width: 1400px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    
+}
+
+.about__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 3rem;
+}
+.about__text {
+flex: 1;
+text-align: left;
+min-width: 300px
+}
+
+.about__picture{
+flex: 0 0 300px;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+}
+
+.about__picture img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -10px -10px 40px rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 960px) {
+    .about__content {
+        flex-direction: column; /* Stack top-to-bottom */
+        align-items: center;    /* Center everything */
+        gap: 2rem;
+    }
+
+    .about__picture {
+        flex: 0 0 auto;  /* Unlock the width so it can fit the phone screen */
+        width: 100%;     /* Let it take full width of mobile view */
+        justify-content: center;
+    }
+}
+/* Experience Section */
+
+/* Container styling */
+.experience {
+    background: black;
+    padding: 100px 0;
+    color: white;
+}
+
+.experience .headers {
+    font-size: 4rem;
+    text-align: left;
+    max-width: 1400px;
+    width: 80%;
+    margin: 6rem auto 1rem auto;
+    display: block;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1400px; /* Matching the 'About' section width */
+    width: 80%;       /* Matching the 'About' section width */
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Significant breathing room between boxes */
+}
+
+/* THE INDIVIDUAL ITEMS */
+.timeline__item {
+    position: relative;
+    width: 100%; /* Expands to fill the container */
+    left: 0 !important; /* Forces everything to the left */
+}
+
+/* THE GRAY BOX (CARD) */
+.timeline__content {
+    padding: 4rem; /* More padding for a premium feel */
+    background: #1a1a1a; 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row; /* Image and text side-by-side */
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Subtle border on hover instead of just lifting */
+.timeline__content:hover {
+    transform: translateX(10px); /* Kicks out to the right slightly on hover */
+    background: #222;
+    border: 1px solid #444;
+}
+
+/* IMAGE STYLING */
+.timeline__img {
+    flex: 0 0 350px; /* Fixed width for the image container */
+}
+
+.timeline__img img {
+    width: 100%;
+    height: 300px; 
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* TEXT TYPOGRAPHY */
+.timeline__text {
+    flex: 1; /* Takes up all remaining width */
+    text-align: left;
+}
+
+.timeline__text h2 {
+    font-size: 2.5rem; /* Bold title */
+    margin-bottom: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.timeline__text h4 {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.contact .headers {
+    margin: 0;
+    line-height: 1.1;
+}
+
+.contact__content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact__icons {
+display: flex;
+gap: 1rem;
+margin-top: 1rem;
+}
+
+.icon__link {
+    color: white;
+    font-size: 3rem;
+    margin: auto 2rem auto;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.icon__link:hover {
+    color: #444;
+    transform: translateY(-5px);
+}
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 960px) {
+    .timeline__content {
+        flex-direction: column; /* Stack on mobile */
+        padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .timeline__img {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    .timeline__img img {
+        height: 250px;
+    }
+}
+

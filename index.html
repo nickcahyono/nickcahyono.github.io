@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Page</title>
+    <link rel="stylesheet" href="styles.css" />
+
+<!-- FONTS -->
+    <!-- Font Download -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+<body>
+
+<!-- Navigation Bar -->
+    <nav class="navbar">
+     <div class="navbar__container"> <!-- div acts as a container to wrap all elements inside of it with a specific CSS style, based on "class" -->
+        <a href="google.com" id="navbar__logo">Nick Cahyono</a>  <!-- a href is a reference to a link. id is used to tag a special element for CSS, versus class, which is used generically (can be reused) -->
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- unlisted menu -->
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="#home" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="#about" class="navbar__links">About</a>
+            </li>
+            <li class="navbar__item">
+                <a href="#experience" class="navbar__links">Experience</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="#contact" class="button">Contact</a>
+            </li>
+        </ul>
+     </div>
+    </nav>
+
+    <!-- Hero Section -->
+     <section class="hero" id="home">
+        <video autoplay muted loop class="hero__video">
+            <source src="videos/Dusty Particles Loop.mp4" type="video/mp4"></source>
+        </video>
+
+        <div class="hero__overlay"></div>
+
+        <div class="hero__content">
+            <h1 id="hero__name">Nick Cahyono</h1>
+            <h2 class="hero__subtitle">I am <span id="typewriter"></span></h2>
+        </div>
+     </section>
+
+
+     <!-- About Section -->
+      <section class="about" id="about">
+        <div class="about__bkg">
+
+            <h1 class="headers">About Me</h1>
+
+            <div class="about__content hidden">
+                
+                <div class="about__text">
+                    <p class="body">Lorem ipsum dolor lorem ultrices hendrerit eget vitae libero. Sed fringilla sollicitudin lobortis. Nam sed purus lacin donec vel velit id eros mattis fringilla. Duis aliquet fermentum fringilla. Vestibulum id condimentum risus. Etiam pulvinar in ipsum efficitur varius. Etiam ut nunc faucibus, facilisis tellus eu, finibus justo. Donec suscipit viverra dolor, nec mattis erat interdum at.</p>
+                </div>
+
+                <div class="about__picture">
+                    <img src="images/Professional Headshot.png" alt="">
+                </div>
+
+
+            </div>
+
+
+        </div>
+      </section>
+
+    <!-- Experience Section (timeline, vertical tree) -->
+
+    <section class="experience" id="experience">
+        <h1 class="headers">Experience</h1>
+        <h2 class="subheaders hidden">Take a look at some roles that have shaped who I am.</h2>
+        <div class="timeline">
+            <div class="timeline__item hidden">
+                <div class="timeline__content">
+
+                    <div class="timeline__text">
+                        <h2>UW Public Speaking Club</h2>
+                        <h4>August 2025 - Present</h4>
+                        <p class="body">I took over this club, with the hopes of putting my leadership skills to the test. I built the framework for the club, and got to work with 9 other students. Running a club has taught me the importance of effective leadership. There is so much to learn, and I am in the process of discovering what style I lead with. </p>
+                    </div>
+                    <div class="timeline__img">
+                        <img src="images/Logo_Condensed_Circle_Icon.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="timeline__item hidden">
+                <div class="timeline__content">
+                    <div class="timeline__img">
+                        <img src="images/york holiday open.jpg" alt="">
+                    </div>
+                    <div class="timeline__text">
+                        <h2>Varsity Track and Field</h2>
+                        <h4>October 2023 - Present</h4>
+                        <p class="body">Funny enough, I actually started at UW playing varsity football. I later transitioned over to track and field because I wanted to learn how to bet on myself. Varsity taught me the importance of discipline and hard work. I learned that progress isn't made in the spotlight, but rather when nobody is watching. Those days where I didn't feel like going to train, yet still showed up, helped shaped my character. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline__item hidden">
+                <div class="timeline__content">
+                    <div class="timeline__text">
+                        <h2>Definity Financial Corporation</h2>
+                        <h4>September 2025 - December 2025</h4>
+                        <p class="body">One of my first co-ops was at Definity. Here, I learned how to work within systems. I found ways to optimize existing workflows, and put my own personal touch on these improvements. I leveraged AI to speed our work up, revamped the KPI file, and created a "Co-Op Bible" that served as a guide for future co-ops. I also learned so much from those around me. It goes to show that there is so much to learn from others, and many stories to be heard.</p>
+                    </div>
+                    <div class="timeline__img">
+                        <img src="images/Definity-Insurance_logo-432x432-2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="timeline__item hidden">
+                <div class="timeline__content">
+                    <div class="timeline__img">
+                        <img src="images/Homeview Logo (W).png" alt="">
+                    </div>
+                    <div class="timeline__text">
+                        <h2>HomeView Window Cleaning</h2>
+                        <h4>April 2024 - August 2025</h4>
+                        <p class="body">Me and my friend founded HomeView back in the summer of '24. At first, we had everything to learn. Knocking on strangers' doors for the first time trying to sell something was like telling a 5-year old to do a double backflip. It was terrifying at first, but we eventually became more confident. I learned how to pitch effectively and pursuasively during my time running the business. I worked with a small team, and taught sales pitches on the frontend, and managed the cash on the backend. It was my first stint at running my own business.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      
+    </section>
+
+    <!-- Contact -->
+     <section class="contact" id="contact">
+        <div class="contact__content">
+            
+            <h2 class="headers">Let's Connect.</h2>
+            <p class="body">Whether it's for a coffee chat or to present a new opportunity, feel free to reach out to me through my socials!</p>
+
+            <div class="contact__links">
+                <a href="mailto:ncahyono@uwaterloo.ca" class="icon__link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nicholas-cahyono/" target="_blank" rel="noopener noreferrer" class="icon__link">
+                    <i class="fab fa-linkedin"></i>                   
+                </a>
+                <a href="https://www.instagram.com/nick.cahyo/" target="_blank" rel="noopener noreferrer" class="icon__link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+     </section>
+
+
+
+
+
+
+
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            // If the element is visible
+            if (entry.isIntersecting) {
+                // 1. Add the class to show it
+                entry.target.classList.add('show');
+                
+                // 2. TELL THE OBSERVER TO STOP WATCHING
+                // This is the key line. It prevents the code from running again
+                // for this specific element. It is now "done" forever.
+                observer.unobserve(entry.target); 
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>
+<script>
+    // 1. The words you want to cycle through
+    const phrases = [
+        "a varsity athlete.",
+        "an entrepreneur.", 
+        "a public speaker.", 
+        "an economics student.",
+        "a risk taker.",
+
+    ];
+
+    const textElement = document.getElementById("typewriter");
+    
+    let phraseIndex = 0; // Which phrase are we on?
+    let charIndex = 0;   // Which letter are we on?
+    let isDeleting = false; // Are we typing or backspacing?
+
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        // LOGIC: Determine what the text should look like right now
+        if (isDeleting) {
+            // Remove a letter
+            textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            // Add a letter
+            textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        // SPEED: How fast does it type?
+        let typeSpeed = 100; // Normal typing speed (milliseconds)
+
+        if (isDeleting) {
+            typeSpeed = 50; // Backspace faster than typing
+        }
+
+        // SCENARIO: Word is fully typed
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            typeSpeed = 2000; // Wait 2 seconds before deleting
+            isDeleting = true; // Switch mode to "Deleting"
+        } 
+        // SCENARIO: Word is fully deleted
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false; // Switch mode to "Typing"
+            phraseIndex = (phraseIndex + 1) % phrases.length; // Move to next word (loop)
+            typeSpeed = 500; // Brief pause before starting new word
+        }
+
+        // REPEAT: Run this function again after 'typeSpeed' milliseconds
+        setTimeout(type, typeSpeed);
+    }
+
+    // Start the engine when the page loads
+    document.addEventListener('DOMContentLoaded', type);
+</script>
+</body>
+</html>
