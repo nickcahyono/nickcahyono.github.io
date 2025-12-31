@@ -24,26 +24,26 @@
 
 <!-- Navigation Bar -->
     <nav class="navbar">
-     <div class="navbar__container"> <!-- div acts as a container to wrap all elements inside of it with a specific CSS style, based on "class" -->
-        <a href="google.com" id="navbar__logo">Nick Cahyono</a>  <!-- a href is a reference to a link. id is used to tag a special element for CSS, versus class, which is used generically (can be reused) -->
-        <div class="navbar__toggle" id="mobile-menu">
+     <div class="navbar-container"> <!-- div acts as a container to wrap all elements inside of it with a specific CSS style, based on "class" -->
+        <a href="google.com" id="navbar-logo">Nick Cahyono</a>  <!-- a href is a reference to a link. id is used to tag a special element for CSS, versus class, which is used generically (can be reused) -->
+        <div class="navbar-toggle" id="mobile-menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
 
         <!-- unlisted menu -->
-        <ul class="navbar__menu">
-            <li class="navbar__item">
-                <a href="#home" class="navbar__links">Home</a>
+        <ul class="navbar-menu">
+            <li class="navbar-item">
+                <a href="#home" class="navbar-links">Home</a>
             </li>
-            <li class="navbar__item">
-                <a href="#about" class="navbar__links">About</a>
+            <li class="navbar-item">
+                <a href="#about" class="navbar-links">About</a>
             </li>
-            <li class="navbar__item">
-                <a href="#experience" class="navbar__links">Experience</a>
+            <li class="navbar-item">
+                <a href="#experience" class="navbar-links">Experience</a>
             </li>
-            <li class="navbar__btn">
+            <li class="navbar-btn">
                 <a href="#contact" class="button">Contact</a>
             </li>
         </ul>
@@ -52,32 +52,35 @@
 
     <!-- Hero Section -->
      <section class="hero" id="home">
-        <video autoplay muted loop class="hero__video">
+        <video autoplay muted loop class="hero-video">
             <source src="videos/Dusty Particles Loop.mp4" type="video/mp4"></source>
         </video>
 
-        <div class="hero__overlay"></div>
+        <div class="hero-overlay"></div>
 
-        <div class="hero__content">
-            <h1 id="hero__name">Nick Cahyono</h1>
-            <h2 class="hero__subtitle">I am <span id="typewriter"></span></h2>
+        <div class="hero-content">
+            <h1 id="hero-name">Nick Cahyono</h1>
+            <h2 class="hero-subtitle">I am <span id="typewriter"></span></h2>
         </div>
      </section>
 
 
      <!-- About Section -->
       <section class="about" id="about">
-        <div class="about__bkg">
+        <div class="section-wrapper">
 
             <h1 class="headers">About Me</h1>
 
-            <div class="about__content hidden">
+            <div class="about-content hidden">
                 
-                <div class="about__text">
-                    <p class="body">Lorem ipsum dolor lorem ultrices hendrerit eget vitae libero. Sed fringilla sollicitudin lobortis. Nam sed purus lacin donec vel velit id eros mattis fringilla. Duis aliquet fermentum fringilla. Vestibulum id condimentum risus. Etiam pulvinar in ipsum efficitur varius. Etiam ut nunc faucibus, facilisis tellus eu, finibus justo. Donec suscipit viverra dolor, nec mattis erat interdum at.</p>
+                <div class="about-text">
+                    <p class="body">My name is Nick, and I’m an Economics & Business student at the University of Waterloo. I’m curious by nature and driven by learning. I love playing the guitar, Indonesian food, and anything related to finance. I also enjoy getting lost in fiction, where my imagination has room to wander. That love of learning is what inspired me to build this site. I’m a firm believer in lifelong growth.
+                    <br><br>Outside of academics, I’m a varsity athlete on the university’s Track and Field team, specializing in long jump (current PB: 6.74 m). I play a mix of sports, including volleyball, basketball, and soccer. I enjoy staying active, and I hope that I can keep on playing sports throughout my lifetime.
+                    <br><br>I also run the UW Public Speaking Club, where I get to share my love of storytelling with the UW community. We host weekly workshops built around games, discussion, and real practice. It’s less like a classroom and more like a community. You can check out what we’re up to on our <a href="https://www.instagram.com/uwpublicspeaking?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram.</a>
+                    <br><br>If you’re curious about what I’m working on, feel free to contact me!</p>
                 </div>
 
-                <div class="about__picture">
+                <div class="about-picture">
                     <img src="images/Professional Headshot.png" alt="">
                 </div>
 
@@ -91,78 +94,77 @@
     <!-- Experience Section (timeline, vertical tree) -->
 
     <section class="experience" id="experience">
-        <h1 class="headers">Experience</h1>
-        <h2 class="subheaders hidden">Take a look at some roles that have shaped who I am.</h2>
+        <div class="section-wrapper">
+            <h1 class="headers">Experience</h1>
+            <h2 class="subheaders hidden">Take a look at some roles that have shaped who I am.</h2>
+        </div>    
         <div class="timeline">
-            <div class="timeline__item hidden">
-                <div class="timeline__content">
-
-                    <div class="timeline__text">
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <div class="timeline-text">
                         <h2>UW Public Speaking Club</h2>
                         <h4>August 2025 - Present</h4>
                         <p class="body">I took over this club, with the hopes of putting my leadership skills to the test. I built the framework for the club, and got to work with 9 other students. Running a club has taught me the importance of effective leadership. There is so much to learn, and I am in the process of discovering what style I lead with. </p>
                     </div>
-                    <div class="timeline__img">
+                    <div class="timeline-img">
                         <img src="images/Logo_Condensed_Circle_Icon.png" alt="">
                     </div>
                 </div>
             </div>
-            <div class="timeline__item hidden">
-                <div class="timeline__content">
-                    <div class="timeline__img">
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <div class="timeline-img">
                         <img src="images/york holiday open.jpg" alt="">
                     </div>
-                    <div class="timeline__text">
+                    <div class="timeline-text">
                         <h2>Varsity Track and Field</h2>
                         <h4>October 2023 - Present</h4>
                         <p class="body">Funny enough, I actually started at UW playing varsity football. I later transitioned over to track and field because I wanted to learn how to bet on myself. Varsity taught me the importance of discipline and hard work. I learned that progress isn't made in the spotlight, but rather when nobody is watching. Those days where I didn't feel like going to train, yet still showed up, helped shaped my character. </p>
                     </div>
                 </div>
             </div>
-            <div class="timeline__item hidden">
-                <div class="timeline__content">
-                    <div class="timeline__text">
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <div class="timeline-text">
                         <h2>Definity Financial Corporation</h2>
                         <h4>September 2025 - December 2025</h4>
                         <p class="body">One of my first co-ops was at Definity. Here, I learned how to work within systems. I found ways to optimize existing workflows, and put my own personal touch on these improvements. I leveraged AI to speed our work up, revamped the KPI file, and created a "Co-Op Bible" that served as a guide for future co-ops. I also learned so much from those around me. It goes to show that there is so much to learn from others, and many stories to be heard.</p>
                     </div>
-                    <div class="timeline__img">
+                    <div class="timeline-img">
                         <img src="images/Definity-Insurance_logo-432x432-2.png" alt="">
                     </div>
                 </div>
             </div>
-            <div class="timeline__item hidden">
-                <div class="timeline__content">
-                    <div class="timeline__img">
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <div class="timeline-img">
                         <img src="images/Homeview Logo (W).png" alt="">
                     </div>
-                    <div class="timeline__text">
+                    <div class="timeline-text">
                         <h2>HomeView Window Cleaning</h2>
                         <h4>April 2024 - August 2025</h4>
                         <p class="body">Me and my friend founded HomeView back in the summer of '24. At first, we had everything to learn. Knocking on strangers' doors for the first time trying to sell something was like telling a 5-year old to do a double backflip. It was terrifying at first, but we eventually became more confident. I learned how to pitch effectively and pursuasively during my time running the business. I worked with a small team, and taught sales pitches on the frontend, and managed the cash on the backend. It was my first stint at running my own business.</p>
                     </div>
                 </div>
             </div>
-
         </div>
-      
     </section>
 
     <!-- Contact -->
      <section class="contact" id="contact">
-        <div class="contact__content">
+        <div class="contact-content">
             
-            <h2 class="headers">Let's Connect.</h2>
+            <h2 class="headers">Let's <span class="purple-text">Connect.</span></h2>
             <p class="body">Whether it's for a coffee chat or to present a new opportunity, feel free to reach out to me through my socials!</p>
 
-            <div class="contact__links">
-                <a href="mailto:ncahyono@uwaterloo.ca" class="icon__link">
+            <div class="contact-links">
+                <a href="mailto:ncahyono@uwaterloo.ca" class="icon-link">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/nicholas-cahyono/" target="_blank" rel="noopener noreferrer" class="icon__link">
+                <a href="https://www.linkedin.com/in/nicholas-cahyono/" target="_blank" rel="noopener noreferrer" class="icon-link">
                     <i class="fab fa-linkedin"></i>                   
                 </a>
-                <a href="https://www.instagram.com/nick.cahyo/" target="_blank" rel="noopener noreferrer" class="icon__link">
+                <a href="https://www.instagram.com/nick.cahyo/" target="_blank" rel="noopener noreferrer" class="icon-link">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>

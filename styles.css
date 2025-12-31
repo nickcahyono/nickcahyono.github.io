@@ -19,18 +19,27 @@ html{
 
 .headers {
     font-size: 4rem;
-    margin: 4rem 0 2rem;
-    text-align: center;
+    margin: 4rem 0 0;
 }
 
 .subheaders {
     color: #8e8e8e;
-    font-size: 2rem;
-    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 0;
+
+}
+.section-wrapper {
     max-width: 1400px;
-    width: 80%;
-    margin: 0.2rem auto 1rem ;
-    display: block;
+    width: 80%;       /* Controls the width for both sections now */
+    margin: 0 auto;   /* Centers the container */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Default alignment */
+    gap: 1rem;
+}
+
+.purple-text {
+    color: #8E2DE2;
 }
 
 /* JS SCRIPTING */
@@ -65,7 +74,7 @@ html{
     top: 0;
 }
 
-.navbar__container {
+.navbar-container {
     display: flex;
     justify-content: space-between;
     height: 80px;
@@ -77,10 +86,10 @@ html{
     position: relative;
 }
 
-#navbar__logo {
+#navbar-logo {
     background-color: black;
-    background-image: linear-gradient(to top, #ff0844 0%, orange 100%);
-    background-size: 100%;
+    background-image: linear-gradient(to right, #8E2DE2, #4A00E0);
+    background-size: 200%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -92,19 +101,19 @@ html{
     font-size: 2rem;
 }
 
-.navbar__menu {
+.navbar-menu {
     display: flex;
     align-items: center;
     list-style: none;
     text-align: center;
 }
 
-.navbar__item {
+.navbar-item {
     height: 80px;
     margin: 0 1rem;
 }
 
-.navbar__links {
+.navbar-links {
     color: white;
     display: flex;
     align-items: center;
@@ -112,9 +121,16 @@ html{
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
+    transition: all 0.3s ease;
 }
 
-.navbar__btn {
+.navbar-links:hover {
+    transform: translateY(-2px);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.navbar-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,131 +145,29 @@ html{
     align-items: center;
     text-decoration: none;
     padding: 10px 20px;
-    height: 100%;
     width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: orange;
+    border: none; /* Remove real border to kill the gap */
+    /* This creates a 2px solid ring INSIDE the button shape */
+    box-shadow: inset 0 0 0 2px #8E2DE2; 
+    background: transparent;
     color: white;
-}
-
-/* To edit button effect when mouse hovers */
-.button:hover {
-    background: blue;
+    border-radius: 50px;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
-/* To edit navigation link effects when mouse hovers */
-.navbar__links:hover {
+.button:hover {
+    /* Fill background */
+    background: linear-gradient(to right, #8E2DE2, #4A00E0);
+    
+    /* Remove the inner ring, add the outer glow */
+    box-shadow: 0 0 20px rgba(74, 0, 224, 0.5); 
+    
+    transform: translateY(-2px);
     color: white;
-    transform: scale(1.2);
-    transition: all 0.2s ease-in-out;
-
-
-/* For Mobile Screens */
 }
 
-@media screen and (max-width: 960px) {
-
-    #mobile-menu {
-        position: absolute;
-        top: 20%;
-        right: 5%;
-        transform: translate(5%, 20%);
-        z-index: 100;
-        display: block;
-        cursor: pointer;
-    }
-
-    .navbar__container {
-        display: flex;
-        justify-content: space-between;
-        height: 80px;
-        z-index: 1;
-        width: 100%;
-        max-width: 1300px;
-        padding: 0;
-    }
-
-    .navbar__menu {
-        display: grid;
-        grid-template-columns: auto;
-        margin: 0px;
-        width: 100%;
-        position: absolute;
-        top: -1000px;
-        opacity: 0;
-        transition: all 0.5s ease;
-        height: 50vh;
-        z-index: -1;
-        background: black;
-    }
-
-    .navbar__menu.active {
-        background: black;
-        top: 100%;
-        opacity: 1;
-        transition: all 0.5 ease;
-        z-index: 99;
-        height: 50vh;
-        font-size: 1.6rem;
-    }
-
-    #navbar__logo {
-        padding-left: 25px;
-    }
-
-    .navbar__toggle .bar {
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background: white;
-        display: block;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .navbar__item {
-        width: 100%;
-    }
-
-    .navbar__links {
-        text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
-    }
-
-
-    .navbar__btn {
-        padding-bottom: 2rem;
-    }
-
-    .button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        height: 80px;
-        margin: 0;
-    }
-
-    /* The following 3 scripts target the 3 bars, animating it into an X when clicking */
-    #mobile-menu.is-active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    #mobile-menu.is-active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    #mobile-menu.is-active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-}
+/* HERO SECTION */
 
 .hero {
     height:100vh;
@@ -262,7 +176,7 @@ html{
 }
 
 
-.hero__video {
+.hero-video {
     position: absolute;   
     top: 0;
     left: 0;
@@ -270,9 +184,14 @@ html{
     height: 100%;
     object-fit: cover;
     z-index: 0;
+
+    /* This creates a fade starting at 80% height down to 100% */
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    margin-bottom: 0;
 }
 
-.hero__overlay {
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -282,35 +201,35 @@ html{
     z-index: 1;
 }
 
-.hero__content {
-position: relative;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-height: 80vh;
-text-align: center;
-color: white;
+.hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    color: white;
 z-index: 2;
 }
 
-#hero__name {
-    font-size: 6rem;
+#hero-name {
+    font-size: 5rem;
     font-weight: bold;
     margin: 0;
     font-family: "Poppins", sans-serif;
 }
 
-.hero__subtitle {
-    
+.hero-subtitle {
+    font-size: 1.5rem;
 }
 
 /* The dynamic text color */
 #typewriter {
-    color:white; /* Matches your button/logo */
+    color: #8E2DE2; /* Matches your button/logo */
     font-weight: bold;
     /* The Cursor Line */
-    border-right: 3px solid white; 
+    border-right: 3px solid #8E2DE2; 
     padding-right: 5px;
     /* The Blinking Animation */
     animation: blink 0.7s step-end infinite;
@@ -319,83 +238,65 @@ z-index: 2;
 /* The Animation Logic */
 @keyframes blink {
     from, to { border-color: transparent }
-    50% { border-color: white }
+    50% { border-color: #8E2DE2 }
 }
 
 
 /* ABOUT SECTION */
 .about {
-    height: 100vh;
+    min-height: 80vh;
+    height: auto;
+    margin: 0 0 3rem;
 }
 
-.about__bkg {
-    max-width: 1400px;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    
-}
-
-.about__content {
+.about-content {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
     gap: 3rem;
 }
-.about__text {
+
+.about-text {
 flex: 1;
 text-align: left;
 min-width: 300px
 }
 
-.about__picture{
+.about-picture{
 flex: 0 0 300px;
 display: flex;
 justify-content: center;
 align-items: flex-start;
 }
 
-.about__picture img{
+.about-picture img {
     width: 100%;
     height: auto;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05), -10px -10px 40px rgba(255, 255, 255, 0.5);
+    border: none;
+    box-shadow: 
+        0 0 0 1px rgba(142, 45, 226, 0.5), /* Layer 1: 0px blur, 10px spread (subtle ring) */
+        0 0 40px rgba(142, 45, 226, 0.3);  /* Layer 2: 30px blur (the atmosphere) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media screen and (max-width: 960px) {
-    .about__content {
-        flex-direction: column; /* Stack top-to-bottom */
-        align-items: center;    /* Center everything */
-        gap: 2rem;
-    }
-
-    .about__picture {
-        flex: 0 0 auto;  /* Unlock the width so it can fit the phone screen */
-        width: 100%;     /* Let it take full width of mobile view */
-        justify-content: center;
-    }
+/* Make it "pop" slightly when you hover */
+.about-picture img:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 0 0 1px rgba(142, 45, 226, 0.8), 
+        0 0 60px rgba(142, 45, 226, 0.5); /* Glow gets brighter */
 }
+
+
 /* Experience Section */
 
 /* Container styling */
 .experience {
     background: black;
-    padding: 100px 0;
     color: white;
-}
-
-.experience .headers {
-    font-size: 4rem;
-    text-align: left;
-    max-width: 1400px;
-    width: 80%;
-    margin: 6rem auto 1rem auto;
-    display: block;
 }
 
 .timeline {
@@ -410,14 +311,14 @@ align-items: flex-start;
 }
 
 /* THE INDIVIDUAL ITEMS */
-.timeline__item {
+.timeline-item {
     position: relative;
     width: 100%; /* Expands to fill the container */
     left: 0 !important; /* Forces everything to the left */
 }
 
 /* THE GRAY BOX (CARD) */
-.timeline__content {
+.timeline-content {
     padding: 4rem; /* More padding for a premium feel */
     background: #1a1a1a; 
     border-radius: 20px;
@@ -431,18 +332,19 @@ align-items: flex-start;
 }
 
 /* Subtle border on hover instead of just lifting */
-.timeline__content:hover {
-    transform: translateX(10px); /* Kicks out to the right slightly on hover */
-    background: #222;
-    border: 1px solid #444;
+.timeline-content:hover {
+    transform: translateX(10px);
+    background: #1a1a1a;
+    border: 1px solid #4A00E0; /* Deep Blue Border */
+    box-shadow: 0 0 15px rgba(74, 0, 224, 0.3); /* Indigo Glow */
 }
 
 /* IMAGE STYLING */
-.timeline__img {
+.timeline-img {
     flex: 0 0 350px; /* Fixed width for the image container */
 }
 
-.timeline__img img {
+.timeline-img img {
     width: 100%;
     height: 300px; 
     object-fit: cover;
@@ -450,18 +352,18 @@ align-items: flex-start;
 }
 
 /* TEXT TYPOGRAPHY */
-.timeline__text {
+.timeline-text {
     flex: 1; /* Takes up all remaining width */
     text-align: left;
 }
 
-.timeline__text h2 {
+.timeline-text h2 {
     font-size: 2.5rem; /* Bold title */
     margin-bottom: 0.5rem;
     font-family: 'Poppins', sans-serif;
 }
 
-.timeline__text h4 {
+.timeline-text h4 {
     color: #aaa;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
@@ -479,7 +381,7 @@ align-items: flex-start;
     line-height: 1.1;
 }
 
-.contact__content {
+.contact-content {
     max-width: 800px;
     margin: 0 auto;
     display: flex;
@@ -488,13 +390,13 @@ align-items: flex-start;
     gap: 1rem;
 }
 
-.contact__icons {
+.contact-icons {
 display: flex;
 gap: 1rem;
 margin-top: 1rem;
 }
 
-.icon__link {
+.icon-link {
     color: white;
     font-size: 3rem;
     margin: auto 2rem auto;
@@ -502,26 +404,205 @@ margin-top: 1rem;
     transition: all 0.3s ease;
 }
 
-.icon__link:hover {
+.icon-link:hover {
     color: #444;
     transform: translateY(-5px);
 }
 
 /* MOBILE RESPONSIVENESS */
-@media screen and (max-width: 960px) {
-    .timeline__content {
-        flex-direction: column; /* Stack on mobile */
-        padding: 2rem;
+/* =========================================
+   MEDIA QUERIES (Responsive Logic)
+   ========================================= */
+
+/* --- TABLET / SMALL LAPTOPS (Max Width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+    
+    /* General Text Scaling */
+    .headers {
+        font-size: 3rem; /* Shrink headers slightly */
+    }
+
+    .subheaders {
+        width: 90%;
+    }
+
+    .section-wrapper {
+        width: 80%;       /* Controls the width for both sections now */
+    }
+
+    /* HERO SECTION */
+
+    #hero-name {
+        font-size: 8vw;
+    }
+
+    .hero-subtitle {
+        font-size: 3vw;
+    }
+
+    /* ABOUT SECTION */
+    .about-content {
+        margin-top: 2rem;
+        align-items: center;
+    }
+
+    .about-picture {
+        width: 80%;
+    }
+
+    /* Experience Section - Tighten up the cards */
+    .timeline-content {
+        padding: 3rem;
         gap: 2rem;
     }
     
-    .timeline__img {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-    
-    .timeline__img img {
-        height: 250px;
+    .timeline-img {
+        flex: 0 0 300px; /* Slightly smaller image area */
     }
 }
 
+/* --- MOBILE DEVICES (Max Width: 768px) --- */
+@media screen and (max-width: 768px) {
+
+    /* 1. GLOBAL ADJUSTMENTS */
+    .headers {
+        font-size: 2.5rem; /* Much smaller to fit phone screens */
+        margin: 3rem 0 0;
+    }
+
+    .subheaders {
+        font-size: 1.2rem;
+        width: 90%;
+        text-align: center;
+    }
+
+    .section-wrapper {
+        align-items: center;
+    }
+
+    /* 2. NAVBAR (Hamburger Menu Logic) */
+    .navbar-container {
+        padding: 0;
+        position: relative;
+    }
+
+    #mobile-menu {
+        display: block; /* Show hamburger icon */
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        transform: translate(0, 0); /* Reset transform to avoid alignment issues */
+        z-index: 100;
+        cursor: pointer;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        background: black;
+        width: 100%;
+        position: absolute;
+        top: -100vh; /* Move it way up initially */
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 100vh; /* Full screen menu */
+        z-index: 98;
+        padding-top: 80px; /* Push links down below the X */
+    }
+
+    /* Active state added via JS */
+    .navbar-menu.active {
+        top: 0;
+        opacity: 1;
+    }
+
+    .navbar-item {
+        height: auto;
+        margin: 1.5rem 0;
+    }
+
+    .navbar-links {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    /* Hamburger Animation Code */
+    .navbar-toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: white;
+        display: block;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
+    #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* 3. HERO SECTION */
+    .hero-content {
+        height: 70vh; /* Adjust for mobile browser bars */
+    }
+
+    /* 4. ABOUT SECTION */
+    .about {
+        height: auto; /* Allow section to grow if text is long */
+        padding-bottom: 4rem;
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack vertically */
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-text {
+        text-align: center; /* Center text for mobile appeal */
+        width: 100%;
+    }
+
+    .about-picture {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px; /* Limit image size */
+    }
+
+    /* 5. EXPERIENCE SECTION */
+    .experience .headers {
+        text-align: center; /* Center header on mobile */
+        margin-top: 2rem;
+    }
+
+    .timeline {
+        width: 90%;
+        gap: 2rem;
+    }
+
+    .timeline-content {
+        flex-direction: column; /* Stack Image on top of Text */
+        padding: 1.5rem; /* Reduce padding significantly */
+        gap: 1.5rem;
+    }
+
+    .timeline-img {
+        flex: 0 0 auto;
+        width: 100%; /* Image takes full width of the card */
+    }
+
+    .timeline-img img {
+        height: 200px; /* Reduce height */
+    }
+
+    .timeline-text {
+        text-align: left; /* Keep text left aligned for readability */
+    }
+
+    .timeline-text h2 {
+        font-size: 1.8rem;
+    }
+}
