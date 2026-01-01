@@ -1,4 +1,4 @@
-/* UNIVERSAL CODE */
+/* #region UNIVERSAL */
 body {
     background-color: black; /* This fixes the white gaps globally */
     color: white;            /* Sets default text color */
@@ -63,22 +63,25 @@ html{
 #mobile-menu {
     display: none;
 }
-
+/* #endregion */
+/* #region NAVBAR */
 .navbar {
-    background: black;
+    background: transparent;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     top: 0;
+    position: relative;
+    z-index: 999;
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
     height: 80px;
-    z-index: 2;
+    z-index: 1000;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
@@ -166,8 +169,8 @@ html{
     transform: translateY(-2px);
     color: white;
 }
-
-/* HERO SECTION */
+/* #endregion */
+/* #region HERO */
 
 .hero {
     height:100vh;
@@ -240,9 +243,8 @@ z-index: 2;
     from, to { border-color: transparent }
     50% { border-color: #8E2DE2 }
 }
-
-
-/* ABOUT SECTION */
+/* #endregion */
+/* #region ABOUT */
 .about {
     min-height: 80vh;
     height: auto;
@@ -290,15 +292,14 @@ align-items: flex-start;
         0 0 60px rgba(142, 45, 226, 0.5); /* Glow gets brighter */
 }
 
-
-/* Experience Section */
-
-/* Container styling */
+/* #endregion */
+/* #region EXPERIENCE */
 .experience {
     background: black;
     color: white;
 }
-
+/* #endregion */
+/* #region TIMELINE */
 .timeline {
     position: relative;
     max-width: 1400px; /* Matching the 'About' section width */
@@ -368,8 +369,8 @@ align-items: flex-start;
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
 }
-
-/* CONTACT SECTION */
+/* #endregion */
+/* #region CONTACT */
 
 .contact {
     padding: 100px 0;
@@ -408,13 +409,12 @@ margin-top: 1rem;
     color: #444;
     transform: translateY(-5px);
 }
+/* #endregion */
+
 
 /* MOBILE RESPONSIVENESS */
-/* =========================================
-   MEDIA QUERIES (Responsive Logic)
-   ========================================= */
 
-/* --- TABLET / SMALL LAPTOPS (Max Width: 1024px) --- */
+/* #region TABLET */
 @media screen and (max-width: 1024px) {
     
     /* General Text Scaling */
@@ -460,13 +460,14 @@ margin-top: 1rem;
         flex: 0 0 300px; /* Slightly smaller image area */
     }
 }
+/* #endregion */
 
-/* --- MOBILE DEVICES (Max Width: 768px) --- */
+/* #region PHONE */
 @media screen and (max-width: 768px) {
 
     /* 1. GLOBAL ADJUSTMENTS */
     .headers {
-        font-size: 2.5rem; /* Much smaller to fit phone screens */
+        font-size: 2.5rem;
         margin: 3rem 0 0;
     }
 
@@ -482,17 +483,26 @@ margin-top: 1rem;
 
     /* 2. NAVBAR (Hamburger Menu Logic) */
     .navbar-container {
-        padding: 0;
+        padding: 0 20px;
         position: relative;
+        display: flex;
+        align-items: center; 
+        justify-content: space-between;
+    }
+
+    #navbar-logo {
+        font-size: 1.5rem;
+        padding-left: 0;
+        z-index: 90;
     }
 
     #mobile-menu {
-        display: block; /* Show hamburger icon */
+        display: block;
         position: absolute;
-        top: 25px;
+        top: 50%;
+        transform: translateY(-50%); 
         right: 20px;
-        transform: translate(0, 0); /* Reset transform to avoid alignment issues */
-        z-index: 100;
+        z-index: 1101;
         cursor: pointer;
     }
 
@@ -500,14 +510,17 @@ margin-top: 1rem;
         display: flex;
         flex-direction: column;
         background: black;
+        position: fixed;
+        top: -100vh;
+        left: 0;
         width: 100%;
-        position: absolute;
-        top: -100vh; /* Move it way up initially */
+        height: 100vh;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 100vh; /* Full screen menu */
-        z-index: 98;
-        padding-top: 80px; /* Push links down below the X */
+        padding-top: 100px;
+        padding-left: 0;
+        margin: 0;
+        z-index: 1100; 
     }
 
     /* Active state added via JS */
@@ -544,65 +557,131 @@ margin-top: 1rem;
     #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* 3. HERO SECTION */
+    /* HERO SECTION */
+
     .hero-content {
         height: 70vh; /* Adjust for mobile browser bars */
     }
 
-    /* 4. ABOUT SECTION */
+    #hero-name {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    /* ABOUT SECTION */
     .about {
         height: auto; /* Allow section to grow if text is long */
         padding-bottom: 4rem;
     }
 
     .about-content {
-        flex-direction: column; /* Stack vertically */
+        flex-direction: column;
         align-items: center;
         gap: 2rem;
     }
 
     .about-text {
-        text-align: center; /* Center text for mobile appeal */
+        text-align: center;
         width: 100%;
     }
 
     .about-picture {
         flex: 0 0 auto;
-        width: 100%;
-        max-width: 400px; /* Limit image size */
+        width: 80%;
+        max-width: 400px;
     }
-
-    /* 5. EXPERIENCE SECTION */
-    .experience .headers {
-        text-align: center; /* Center header on mobile */
-        margin-top: 2rem;
-    }
-
+    /* EXPERIENCE SECTION */
+    /* Make the timeline a horizontal swipe row */
     .timeline {
-        width: 90%;
-        gap: 2rem;
+    width: 100%;
+    max-width: none;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 16px 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: auto;
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+    -webkit-overflow-scrolling: touch;
     }
 
+    .timeline::-webkit-scrollbar { 
+        height: 0; 
+    }
+
+    /* Each slide */
+    .timeline-item {
+    flex: 0 0 84vw; 
+    max-width: 420px;
+    scroll-snap-align: start; /* predictable snapping */
+    }
+
+    /* Card itself */
     .timeline-content {
-        flex-direction: column; /* Stack Image on top of Text */
-        padding: 1.5rem; /* Reduce padding significantly */
-        gap: 1.5rem;
+    width: 100%;
+    padding: 18px;
+    gap: 14px;
+
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    min-height: 560px; /* makes all cards same height */
+    box-sizing: border-box;
     }
 
+    /* Image */
     .timeline-img {
-        flex: 0 0 auto;
-        width: 100%; /* Image takes full width of the card */
+        order: -1;
+    flex: 0 0 auto !important;
+    width: 78% !important;
+    max-width: 280px;
     }
 
     .timeline-img img {
-        height: 200px; /* Reduce height */
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    border-radius: 15px;
     }
 
+    /* Text */
     .timeline-text {
-        text-align: left; /* Keep text left aligned for readability */
+    width: 100% !important;
+    text-align: center;
     }
 
     .timeline-text h2 {
-        font-size: 1.8rem;
+    font-size: 1.5rem;
+    margin: 0.25rem 0;
     }
+
+    .timeline-text h4 {
+    margin: 0.25rem 0 0.75rem;
+    }
+
+    .timeline-text p.body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+    }
+
+    /* remove desktop hover shift on mobile */
+    .experience .timeline-content:hover { transform: none;}
+
+    /* CONTACT SECTION */
+    .contact-content {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .icon-link {
+        margin: 0 1rem;
+    }
+    /* #endregion */
 }
